@@ -1,0 +1,46 @@
+
+
+<script>
+   let text= document.querySelector('#task-input');
+   let btn = document.querySelector('#add-button');
+   let task = document.querySelector('#task-list');
+  
+
+   btn.addEventListener('click',() =>{
+    let inputValue = text.value;
+    let taskList = document.createElement('li');
+    let button = document.createElement('button');
+       taskList.textContent = inputValue;
+       button.textContent="not-completed";
+       button.classList.add('btn');
+       button.classList.add('btn-danger');
+
+        button.addEventListener('click',() =>{
+            if(button.classList.contains('btn-danger')){
+                button.classList.remove('btn-danger');
+                button.classList.add('btn-success');
+                button.textContent = "Completed";
+            } else if(button.classList.contains('btn-success')){
+                button.classList.remove('btn-success');
+                button.classList.add('btn-danger');
+                button.textContent = "not-Completed";
+            }
+            
+          
+          
+         
+          
+            
+        });
+       taskList.appendChild(button);
+       task.appendChild(taskList);
+      console.log(button);
+    console.log(inputValue);
+    text.value = '';
+
+   });
+   
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</body>
+</html>
